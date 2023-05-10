@@ -1,0 +1,223 @@
+/* Mohamed Amsakine && Saad El Affati*/
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #6c757d;
+    --dark: #212529;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --dark-yellow: #b59336;
+    --green: #5ed1c9;
+    --dark-green: #41918c;
+    --red: #ff6b6b;
+    --dark-red: #bf5050;
+    --light-blue: #b89cff;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+    --dark-cyan: #0096bf;
+}
+
+.dashboard-container {
+    background-color: var(--white);
+    height: 100%;
+}
+
+.dashboard-left-container {
+    color: var(--white);
+    padding: 10px;
+    background-image: linear-gradient(
+        to bottom left,
+        var(--purple),
+        var(--dark-purple)
+    );
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.admin-info {
+    padding: 20px 0 20px 0;
+}
+
+.admin-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 10px 0;
+}
+
+.admin-picture {
+    width: 85px;
+    height: 85px;
+    clip-path: circle();
+    border-radius: 50%;
+    border: 3px solid var(--white);
+}
+
+.admin-buttons ul {
+    list-style-type: none;
+    padding: 20px 0 0 25px;
+}
+
+.option-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.option-btn:hover {
+    cursor: pointer;
+    color: var(--light-purple);
+}
+
+.dash-container,
+.users-container,
+.articles-container {
+    padding: 40px 20px;
+}
+
+.statistical {
+    display: flex;
+    justify-content: space-between;
+}
+
+.users-stat,
+.articles-stat,
+.download-stat,
+.comment-stat,
+.earning-stat {
+    border-radius: 10px;
+    color: var(--dark);
+    text-align: center;
+    padding: 10px;
+    width: 18%;
+}
+
+.state-icons {
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.state-numbers {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.stat-cart {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.users-stat {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--yellow),
+        var(--dark-yellow)
+    );
+}
+
+.articles-stat {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--green),
+        var(--dark-green)
+    );
+}
+
+.download-stat {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--red),
+        var(--dark-red)
+    );
+}
+
+.comment-stat {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--light-blue),
+        var(--blue)
+    );
+}
+
+.earning-stat {
+    background-image: linear-gradient(
+        to bottom right,
+        var(--cyan),
+        var(--dark-cyan)
+    );
+}
+
+.users-table-thead {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.user-picture {
+    width: 40px;
+    height: 40px;
+    clip-path: circle();
+}
+
+.upload-button {
+    background-color: var(--purple);
+    border-radius: 50%;
+    border: 3px solid var(--dark);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 80px;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    display: block;
+}
+
+/* ARTICLES */
+
+.article-form {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 42%;
+    padding: 20px 30px 30px;
+    margin: 20px auto;
+    background-color: var(--white);
+}
+
+.form-articl-icon {
+    color: var(--purple);
+    font-size: 100px;
+    text-align: center;
+    display: block;
+}
+
+.create-article-button:hover {
+    color: var(--white);
+}
+
+.dashboard-right-container {
+    background-color: var(--gray);
+}
+
+.admin-data-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-brand {
+    font-size: 2rem;
+    padding-left: 25px;
+}

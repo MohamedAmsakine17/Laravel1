@@ -1,0 +1,215 @@
+/* Mohamed Amsakine && Saad El Affati*/
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --darker-gray: #cccccc;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #8C8C8C;
+    --dark: #000;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --green: #5ed1c9;
+    --red: #ff6b6b;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+}
+
+.main-product {
+    background-color: var(--dark);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 500px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.main-product-img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-produt-info small {
+    font-weight: 500;
+}
+
+.main-product-title {
+    font-size: 2.8rem;
+    line-height: 1.5;
+}
+
+.main-produt-info p {
+    font-size: 1.1rem;
+}
+
+.main-produt-info button {
+    margin-top: 25px;
+}
+
+/* Nav */
+
+.category-items-container {
+    margin: 100px 0;
+}
+
+.category-item {
+    color: var(--dark);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.category-item:hover i {
+    color: var(--white);
+    background-color: var(--purple);
+}
+
+.category-item:hover span {
+    color: var(--purple);
+}
+
+.category-item:hover small {
+    color: var(--dark);
+}
+
+.category-item i {
+    background-color: var(--gray);
+    font-size: 35px;
+    padding: 6px 12px;
+    border-radius: 50%;
+}
+
+.category-item span {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.category-item small {
+    display: block;
+    font-size: 18px;
+}
+
+/* POPULER ASSETS */
+
+.voir-plus-link,
+.pills-assets {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pills-assets {
+    color: var(--dark-gray);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.pills-assets:hover {
+    color: var(--purple);
+}
+
+.active {
+    color: var(--dark);
+}
+
+/* ARTICLES */
+
+.articles-cards-container {
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.article-card {
+    border-radius: 10px;
+    padding: 0px 12px 5px 12px;
+    overflow: hidden;
+}
+
+.article-image {
+    width: 191.66px;
+    height: 127.75px;
+    background-color: red;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.article-owner,
+.article-title {
+    font-size: 1.15rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 181.66px;
+}
+
+.article-title {
+    font-weight: 700;
+}
+
+.article-rating {
+    display: flex;
+}
+
+.article-rating i {
+    margin: 3px 3px 3px 0;
+}
+
+.article-price {
+    font-weight: 600;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* About Web Site */
+
+.about-web-site-text {
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.about-web-site-text i {
+    margin-right: 15px;
+    color: var(--light-dark);
+}
+
+.about-web-site-text span {
+    font-size: 30px;
+}
+
+.about-web-site-text small {
+    display: block;
+    font-size: 20px;
+    line-height: 0.5;
+    color: var(--light-dark);
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        padding-top: 40px;
+    }
+
+    .main-product {
+        height: max-content;
+    }
+
+    .main-product-img-container {
+        height: 150px;
+    }
+
+    .wrapper {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .wrapper .item {
+        margin-bottom: 10px;
+    }
+}

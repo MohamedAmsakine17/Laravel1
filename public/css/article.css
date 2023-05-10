@@ -1,0 +1,129 @@
+/* Mohamed Amsakine && Saad El Affati*/
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #6c757d;
+    --dark: #212529;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --green: #5ed1c9;
+    --red: #ff6b6b;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+}
+
+body {
+    background-color: var(--white);
+}
+
+/* IMAGES */
+
+.article-main-img-container {
+    width: 748px;
+    height: 431px;
+}
+
+.article-img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.article-small-img {
+    cursor: pointer;
+    width: 149.6px;
+    height: 86.2px;
+}
+
+.acitce-article-img {
+    background-color: #f5f5f57e;
+    width: 100%;
+    height: 100%;
+}
+
+/* CONTENT */
+
+.article-content-container {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 0px;
+}
+
+.article-owner-picture {
+    width: 40px;
+    height: 40px;
+    clip-path: circle();
+    margin-right: 15px;
+}
+
+.article-owner-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.article-rating-stars {
+    font-size: 30px;
+}
+
+.article-buttons {
+    position: absolute;
+    left: 20px;
+    bottom: 102.19px;
+}
+
+.article-buy-buttons {
+    font-size: 2rem;
+    padding: 25px 50px;
+}
+
+.article-panier-buttons {
+    font-size: 2rem;
+    padding: 25px 25px;
+}
+
+.article-love-buttons {
+    font-size: 2rem;
+    padding: 25px 15px;
+}
+
+/* Description and Comments */
+
+.article-about-button {
+    color: var(--dark-gray);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 18px;
+}
+
+.article-about-button:hover {
+    color: var(--purple);
+}
+
+.active {
+    color: var(--dark);
+}
+
+/* PRICE */
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.promo-price {
+    color: var(--purple);
+}
+
+.original-price {
+    color: var(--dark-gray);
+    font-size: 1.2rem;
+    text-decoration-line: line-through;
+}
