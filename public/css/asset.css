@@ -1,0 +1,107 @@
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --darker-gray: #cccccc;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #8c8c8c;
+    --dark: #000;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --green: #5ed1c9;
+    --red: #ff6b6b;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+}
+
+.assets-main-title {
+    font-size: 3rem;
+}
+.assets-header,
+.asset-pages-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.asset-img-container {
+    background-color: var(--dark-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+.asset-article-title,
+.asset-article-owner,
+.asset-article-buy-date {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+}
+.asset-article-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--dark-purple);
+    background-color: var(--purple);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(22px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--dark-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+    fill: #fff;
+}
+
+.button:hover {
+    background: var(--dark-purple);
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: var(--dark-purple);
+}
+
+.button:active {
+    border: 1px solid var(--dark-purple);
+}

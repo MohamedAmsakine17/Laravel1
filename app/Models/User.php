@@ -9,11 +9,18 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable implements MustVerifyEmail
+
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class User extends Authenticatable implements MustVerifyEmail, HasMedia
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia , SoftDeletes;
 
     protected $directory = 'images/';
+
+    protected $date = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *
@@ -45,11 +52,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function setNameAttribute($value){
+    public function setNameAttribute($value)
+    {
         $this->attributes['name'] = strtolower($value);
     }
-    
-    public function getNameAttribute($value){
+
+    public function getNameAttribute($value)
+    {
         return ucfirst($value);
     }
 
@@ -57,20 +66,35 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->directory . $value;
     }
-    
-    public function role(){
+
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
-    public function articles(){
+    public function articles()
+    {
         return $this->hasMany(Article::class);
     }
 
-    public function carts(){
+    public function carts()
+    {
         return $this->hasMany(Cart::class);
     }
 
-    public function Save(){
-        return $this->hasOne(Save::class);
+    public function saves()
+    {
+        return $this->hasMany(Save::class);
     }
+
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

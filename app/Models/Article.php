@@ -16,23 +16,40 @@ class Article extends Model implements HasMedia
         'title',
         'product_id',
         'description',
-        'category'
+        'category',
+        'price',
+        'name',
+        'promo',
+        'originalPrice',
+        'rating'
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function product(){
-        return $this->belongsTo(Product::class);
-    }
-
-    public function carts(){
+    public function carts()
+    {
         return $this->hasMany(Cart::class);
     }
 
-    public function saves(){
-        return $this->belongsToMany(Save::class);
+    public function saves()
+    {
+        return $this->hasMany(Save::class);
     }
-    
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function pin()
+    {
+        return $this->hasOne(Pin::class);
+    }
 }

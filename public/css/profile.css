@@ -1,16 +1,14 @@
-/* Mohamed Amsakine && Saad El Affati*/
 
 /* ---------- COLORS ---------- */
 
 :root {
     --white: #ffffff;
     --gray: #f5f5f5;
-    --light-dark-gray: #d6d6d6;
     --purple: #9d44f6;
     --dark-purple: #7a19dc;
     --light-purple: #dabbfa;
-    --dark-gray: #6c757d;
-    --dark: #212529;
+    --dark-gray: #8c8c8c;
+    --dark: #000;
     --light-dark: #373c42;
     --red: #ee3540;
     --dark-red: #b5242e;
@@ -23,38 +21,104 @@
 
 /* ---------- PROFILE ---------- */
 
+.main-container {
+    background-color: transparent;
+}
+
 .profile-container {
     background-color: var(--white);
-    border-radius: 10px;
-    width: 80%;
-    overflow: hidden;
+    border-radius: 7px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
         rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .profile-background {
     width: 100%;
-    height: 120px;
+    height: 10px;
 }
 
-.profile-info {
-    padding: 10px 40px 20px 40px;
+.profile-data,
+.user-edit-data {
+    padding: 20px;
 }
 
-.profile-picture-container {
-    position: relative;
-    width: 10%;
+.profile-data {
+    display: flex;
 }
 
 .profile-picture {
     width: 125px;
     height: 125px;
-    clip-path: circle();
-    position: absolute;
-    top: -75px;
+    border-radius: 7px;
+    border: 2px solid var(--purple);
+    overflow: hidden;
+}
+.user-picture {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-.profile-user-info-container {
+.upload-picture-button {
+    border: none;
+    background-color: transparent;
+    color: var(--purple);
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.user-info {
+    margin-left: 20px;
+}
+
+.user-name,
+.user-email,
+.user-role {
+    margin-bottom: 0px;
+}
+
+.user-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.user-edit-data {
+    background-color: var(--gray);
+}
+
+.user-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-data-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.edit-button {
+    border: 0;
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 4px;
+}
+
+.edit-button:hover {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+
+/* .profile-user-info-container {
     width: 90%;
 }
 
@@ -62,13 +126,6 @@
     background-color: var(--light-dark-gray);
     border-radius: 10px;
     padding: 20px;
-}
-
-.upload-picture-button {
-    width: 100%;
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
 }
 
 .user-info small {
@@ -86,4 +143,26 @@
     font-size: 15px;
     color: var(--white);
     padding: 3px 10px;
+} */
+
+@media only screen and (max-width: 600px) {
+    .profile-data {
+        display: block;
+    }
+
+    .profile-picture {
+        margin: auto;
+    }
+
+    .user-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .user-data-text {
+        text-overflow: ellipsis;
+        width: 240px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }

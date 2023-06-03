@@ -1,4 +1,3 @@
-{{-- Mohamed Amsakine & Saad El Affati --}}
 
 @extends('layouts.app')
 
@@ -17,23 +16,27 @@
                 @foreach($carts as $cart)
                     <div class="d-flex">
                         <div class="cart-img-container">
-                            <div class="cart-img" style= "background-image: url({{$cart->article->getFirstMediaUrl('image3', 'thumb')}}); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+                            <div class="picture" style= "background-image: url({{$cart->article->getFirstMediaUrl('image1', 'thumb')}}); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
                         </div>
                         <div class="d-flex justify-content-between w-100 cart-text-data">
                             <a class="h4 cart-title" href="/article/{{$cart->article->id}}"><span>{{$cart->title}}</span></a>
                            <div>
-                            @if($cart->article->product->promo < 100)
+                            @if($cart->article->promo < 100 && $cart->article->price > 0 && $cart->article->promo != 0)
                                 <div class="price-data">
-                                    <div class="h4 cart-price">{{$cart->article->product->price}} MAD</div> 
+                                    <div class="h4 cart-price">{{$cart->article->price}} MAD</div> 
                                     <div class="d-flex">
-                                        <div class="cart-original-price">{{$cart->article->product->originalPrice}} MAD</div> 
-                                        <div class="promo d-flex align-items-center"><div>{{$cart->article->product->promo}}%</div></div> 
+                                        <div class="cart-original-price">{{$cart->article->originalPrice}} MAD</div> 
+                                        <div class="promo d-flex align-items-center"><div>{{$cart->article->promo}}%</div></div> 
                                     </div>
                                 </div>
                             @else
+                                @if($cart->article->price <= 0)
+                                    <div class="h4 cart-price">Gratuit</div>
+                                @else
                                 <div class="price-data">
-                                    <div class="h4 cart-price"> {{$cart->article->product->originalPrice}} MAD</div>
+                                    <div class="h4 cart-price"> {{$cart->article->originalPrice}} MAD</div>
                                 </div>
+                                @endif
                             @endif
                            </div>
                         </div>
@@ -45,6 +48,9 @@
                     </form>
                     <hr>
                 @endforeach
+                <div class="articles-pages">
+                    {{ $carts->links() }}
+                </div>
             </div>
         </div>
         <div class="col-lg-3 col-12">
@@ -55,8 +61,13 @@
                     <p>Sous-total</p>
                     <p>{{$priceTotal}} MAD</p>
                 </div>
+                <div class="text-secondary text-center">Taxes/TVA calculées à la caisse</div>
             </div>
-            <button class="purple-button cart-buy-buttons">J'ACHETER</button>
+            <button onclick="document.getElementById('payment-form').submit();" class="purple-button cart-buy-buttons"><i class="bi bi-paypal me-3"></i> J'ACHETER</button>
+            <form id="payment-form" method="POST" action="{{route('payment')}}">
+                @csrf
+                <input type="hidden" name="amount" value="{{$priceTotal}}">
+            </form>
         </div>
     </div>
 </main>

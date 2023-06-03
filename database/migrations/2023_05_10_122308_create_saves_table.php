@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('saves', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->default("Saves");
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });

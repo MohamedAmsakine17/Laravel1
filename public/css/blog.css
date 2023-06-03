@@ -1,0 +1,32 @@
+
+/* ---------- COLORS ---------- */
+
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --darker-gray: #cccccc;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #8c8c8c;
+    --dark: #000;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --green: #5ed1c9;
+    --red: #ff6b6b;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+}
+
+.post-image-container {
+    background-color: var(--dark-gray);
+    width: 80%;
+    margin-left: auto ;
+}
+
+.post-creator-image-container {
+    background-color: var(--dark-gray);
+    width: 45px;
+    height: 45px;
+    clip-path: circle();
+}

@@ -1,0 +1,101 @@
+:root {
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --darker-gray: #cccccc;
+    --purple: #9d44f6;
+    --dark-purple: #7a19dc;
+    --light-purple: #dabbfa;
+    --dark-gray: #8c8c8c;
+    --dark: #000;
+    --light-dark: #373c42;
+    --yellow: #f6c94a;
+    --green: #5ed1c9;
+    --red: #ff6b6b;
+    --blue: #6b5b95;
+    --cyan: #00c8ff;
+}
+
+.save-page-title {
+    font-size: 3rem;
+}
+.save-container {
+    width: 275px;
+}
+.save-image-container {
+    background-color: var(--dark-gray);
+    width: 100%;
+    height: 225px;
+}
+.save-title,
+.save-owner {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.save-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.save-owner-image {
+    clip-path: circle();
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+}
+.save-owner,
+.save-article-price {
+    font-weight: 500;
+}
+
+.save-owner {
+    font-size: 1.25rem;
+}
+.save-article-rate {
+    font-size: 20px;
+}
+.save-article-price {
+    font-size: 1.2rem;
+}
+
+.save-article-img {
+    position: relative;
+}
+
+.remove-save {
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    padding: 5px 5px;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+.remove-save form,
+.remove-save form button {
+    height: 30px;
+    width: 30px;
+}
+
+.remove-save form {
+    display: flex;
+    align-items: center;
+}
+
+.remove-save form button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.remove-save form button .material-icons-outlined {
+    font-size: 30px;
+    color: var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+    .save-container {
+        margin: auto;
+    }
+}

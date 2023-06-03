@@ -10,30 +10,36 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function index(){
-        $user = Auth::user();
-        $carts = $user->carts;
+    public function index()
+    {
+        $carts = Auth::user()->carts()->paginate(3);
+        $cartsTotal = Auth::user()->carts;
         $priceTotal = 0;
-        foreach($carts as $cart){
+        foreach ($cartsTotal as $cart) {
             $priceTotal += $cart->price;
         }
-        return view('cart',compact('carts','priceTotal'));
+        return view('cart', compact('carts', 'priceTotal'));
     }
-    public function create($id){
+    public function create(Request $request, $id)
+    {
         $user = Auth::user();
 
         $article = Article::find($id);
 
-        $cart = $user->carts()->create([
+        $user->carts()->create([
             'title' => $article->title,
-            'price' =>$article->product->price,
+            'price' => $article->price,
             'article_id' => $article->id
         ]);
-
-        return redirect(route('panier'));
+        if ($request->type == "Buy") {
+            return redirect(route('panier'));
+        } else {
+            return back();
+        }
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         Cart::find($id)->delete();
         return redirect(route('panier'));
     }

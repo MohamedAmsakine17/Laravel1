@@ -9,11 +9,13 @@ class Save extends Model
 {
     use HasFactory;
 
-    public  function user (){
+    protected $fillable = ['user_id','article_id'];
+
+    public function user (){
         return $this->belongsTo(User::class);
     }
 
-    public function articles(){
-        return $this->belongsToMany(Articles::class);
+    public function article(){
+        return $this->belongsTo(article::class);
     }
 }

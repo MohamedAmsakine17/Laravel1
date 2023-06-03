@@ -1,6 +1,6 @@
-1. Create Saves
 2. Delete Products Table and work with Articles Only
 3. Finish the home page
+1. Create Saves
 4. Finish the Saves page
 5. Add Paiment to the application
 6. Edit the admin dashboard
